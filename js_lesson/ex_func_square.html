@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Συνάρτηση Square</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        input, button, p{
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <p>Τα τετράγωνα των αριθμών από 1 μέχρι 
+        <input type="text" size="5" name=range, id=range>
+    </p>
+    <button onclick="calculate()">Υπολογισμός</button>
+    <p id="squares"></p>
+    <script>
+        const theSquares = document.querySelector("#squares");
+        function calculate(){
+            theSquares.innerHTML="";
+            let range = document.querySelector("#range").value;
+            // square the numbers from 1 to 10
+            for (let x = 1; x <= parseInt(range); x++){
+                theSquares.innerHTML += "Το τετράγωνο του " + x +
+                        " είναι " + square(x) + "<br>";
+            }
+        }
+
+        // square function definition
+        function square(y){
+            return y * y;
+        }
+
+    </script>
+</body>
+</html>
