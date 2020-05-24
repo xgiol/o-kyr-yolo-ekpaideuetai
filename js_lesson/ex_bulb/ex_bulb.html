@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Αναβόσβησε τη λάμπα</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+    </style>
+    <script>
+        function lighton(){
+            document.querySelector('#myimage').src = "bulbon.png";
+        }
+        function lightoff(){
+            document.querySelector('#myimage').src = "bulboff.png";
+        }
+    </script>
+</head>
+<body>
+    <img id="myimage" onmousedown="lighton()" onmouseup="lightoff()" src="bulboff.png" width="100" height="180"/>
+    <p>Πατήστε τη λάμπα:</p>
+    <p>Άσκηση: Αλλάξτε τον κώδικα ώστε να ανάβει/σβήνει <br> όταν πατάμε στη λάμπα.</p.>
+</body>
+</html>
