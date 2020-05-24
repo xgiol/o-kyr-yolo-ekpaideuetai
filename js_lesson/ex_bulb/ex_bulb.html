@@ -18,13 +18,18 @@
             // τοποθετήσαμε το script μετά τα στοιχεία γιατί όταν έτρεχε δεν είχε ακόμη φορτωθεί το DOM
             // κι έτσι πέταγε ένα error γιατί το myimg ήταν null κι έτσι δεν μπορούσε να διαβάσει το property addEventListener
             const myimg = document.querySelector("#myimage");
-            myimg.addEventListener("mousedown", lighton);
-            myimg.addEventListener("mouseup", lightoff);
-            function lighton(){
-                this.src = "bulbon.png";
-            }
-            function lightoff(){
-                this.src = "bulboff.png";
+            myimg.addEventListener("click", switchlight);
+            function switchlight(){
+                console.log(this.src);
+                // η this.src επιστρέφει όλο το μονοπάτι οπότε δεν μπορεί να κάνει switch
+                // οπότε χρησιμοποιούμε την indexOf για να δούμε αν απλά ανήκει στο μονοπάτι κι όχι αν είναι ίδιο
+                if (this.src.indexOf("bulboff.png") !== -1){
+                    this.src = "bulbon.png";
+                }
+                else{
+                    this.src = "bulboff.png";
+                }
+                
             }
         </script>
 </body>
